@@ -1,0 +1,52 @@
+## Konfiguracja środowiska i uruchomienie projektu
+
+Poniższa instrukcja opisuje, jak skonfigurować izolowane środowisko wirtualne dla tego projektu za pomocą `venv`.
+
+### Krok 1: Utworzenie wirtualnego środowiska
+
+W głównym katalogu projektu uruchom poniższą komendę, aby utworzyć środowisko o nazwie `venv`:
+
+```bash
+python3 -m venv venv```
+
+### Krok 2: Aktywacja środowiska
+
+Aby rozpocząć pracę, musisz aktywować utworzone środowisko. Sposób aktywacji różni się w zależności od systemu operacyjnego.
+
+*   **Dla Windows (w terminalu PowerShell):**
+    ```powershell
+    .\venv\Scripts\Activate.ps1
+    ```
+    *(Jeśli pojawi się błąd dotyczący polityki uruchamiania skryptów, być może będziesz musiał uruchomić `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process` i spróbować ponownie.)*
+
+*   **Dla Windows (w wierszu poleceń CMD):**
+    ```cmd
+    .\venv\Scripts\activate.bat
+    ```
+
+*   **Dla macOS / Linux:**
+    ```bash
+    source venv/bin/activate
+    ```
+
+Po poprawnej aktywacji, na początku wiersza poleceń powinna pojawić się nazwa środowiska, np. `(venv)`.
+
+### Krok 3: Instalacja zależności
+
+Gdy środowisko jest aktywne, zainstaluj wszystkie wymagane pakiety za pomocą jednej komendy, która wczyta je z pliku `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
+```
+
+Teraz Twoje środowisko jest gotowe do pracy!
+
+---
+
+### Dezaktywacja środowiska
+
+Aby wyjść ze środowiska wirtualnego i wrócić do globalnej konfiguracji Pythona, użyj komendy:
+
+```bash
+deactivate
+```
